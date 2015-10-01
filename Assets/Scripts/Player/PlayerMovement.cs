@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
 	Vector3 movement;                   // The vector to store the direction of the player's movement.
 	Animator anim;                      // Reference to the animator component.
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
-	public float jumpSpeed = 1000.0f;
+	public float jumpHeight = 10;
+	bool isFalling;
 
 
 
@@ -28,6 +29,13 @@ public class PlayerMovement : MonoBehaviour
 
 		// Animate the player.
 		Animating (h, v);
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			Vector3 vel = playerRigidbody.velocity;
+			vel.y = jumpHeight;
+			playerRigidbody.velocity = vel;
+			playerRigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.VelocityChange);
+			isFalling = true;
+		}
 	}
 	
 	void Move (float h, float v)
@@ -65,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
 		playerRigidbody.MovePosition (transform.position + movement);
 
 
+
+
 	}
 	
 
@@ -75,10 +85,20 @@ public class PlayerMovement : MonoBehaviour
 		bool walking = h != 0f || v != 0f;
 		
 		// Tell the animator whether or not the player is walking.
-		anim.SetBool ("IsWalking", walking);
+
 		anim.SetFloat ("speed", v);
-		if (Input.GetKeyDown("space")) { 
-			anim.SetTrigger ("spin");
+//		if (Input.GetKeyDown("space")) { 
+//			anim.SetTrigger ("spin");
+//		}
+		if (isFalling) {
+			anim.SetBool ("isFalling",true);
+		} else {
+			anim.SetBool ("isFalling",false);
+			anim.SetBool ("IsWalking", walking);
 		}
+	}
+	void OnCollisionStay ()
+	{
+		isFalling = false;
 	}
 }
