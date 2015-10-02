@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
 
-		if (Input.GetButtonDown ("Fire1") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Jump")) {
+		if (Input.GetButtonDown ("Jump") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Jump")) {
 			anim.SetTrigger ("Jump");
 		}
 
