@@ -16,7 +16,6 @@ public class UIUpdater : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int itemsSpawned = itemSpawn.getSpawnedItems ();
-		print (itemsSpawned);
 
 		if (text) {
 			text.text = "Cubes Spawned: " + itemsSpawned;

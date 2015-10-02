@@ -24,7 +24,7 @@ public class ItemSpawn : MonoBehaviour {
 //			print (getSpawnedItems ());
 //		}
 		if( Input.GetAxisRaw("placeItem") != 0)
-		{	print ("YAY");
+		{	
 			if(m_isAxisInUse == false)
 			{
 				// Call your event function here.
