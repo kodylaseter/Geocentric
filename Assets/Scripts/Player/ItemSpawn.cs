@@ -5,7 +5,7 @@ public class ItemSpawn : MonoBehaviour {
 
 	public GameObject item;
 	public Transform[] spawnPoints;
-	public int maxItems;
+	public int maxItems = 1000;
 	public int spawnedItems;
 	private bool m_isAxisInUse = false;
 
