@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement_old : MonoBehaviour
 {
 	public float speed = 6f;            // The speed that the player will move at.
-	public float jumpHeight = 10;
 	
 	Vector3 movement;                   // The vector to store the direction of the player's movement.
 	Animator anim;                      // Reference to the animator component.
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
+	public float jumpHeight = 10;
 	bool isFalling;
-	bool isWalking;
-	bool jump;
+
 
 
 	void Awake ()
@@ -23,26 +22,20 @@ public class PlayerMovement : MonoBehaviour
 	void FixedUpdate ()
 	{
 		// Store the input axes.
-		float h = Input.GetAxisRaw ("Horizontal");
-		float v = Input.GetAxisRaw ("Vertical");
-
-		if (Input.GetButtonDown ("Fire1") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Jump")) {
-			anim.SetTrigger ("Jump");
-		}
-
-		isWalking = h != 0f || v != 0f;
+		float h = Input.GetAxis ("Horizontal");
+		float v = Input.GetAxis ("Vertical");
 
 		Move (h, v);
 
 		// Animate the player.
 		Animating (h, v);
-//		if (Input.GetKeyDown (KeyCode.Space)) {
-//			Vector3 vel = playerRigidbody.velocity;
-//			vel.y = jumpHeight;
-//			playerRigidbody.velocity = vel;
-//			playerRigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.VelocityChange);
-//			isFalling = true;
-//		}
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			Vector3 vel = playerRigidbody.velocity;
+			vel.y = jumpHeight;
+			playerRigidbody.velocity = vel;
+			playerRigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.VelocityChange);
+			isFalling = true;
+		}
 	}
 	
 	void Move (float h, float v)
@@ -65,25 +58,19 @@ public class PlayerMovement : MonoBehaviour
 
 
 		// Change character's rotation based on where he's facing.
-		if (isWalking) {
+		bool walking = h != 0f || v != 0f;
+		if (walking) {
 			lookDirection = Quaternion.RotateTowards (transform.rotation,characterDirection,10);
 			playerRigidbody.MoveRotation (lookDirection);
 		}
 
-
-//		Quaternion newRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 
-//		                                          transform.rotation.eulerAngles.y + 200f * Time.deltaTime * h,
-//		                                          transform.rotation.eulerAngles.z);
-//
-//		playerRigidbody.MoveRotation(newRotation);
-
 		// Normalise the movement vector and make it proportional to the speed per second.
-		//movement = movement.normalized * speed * Time.deltaTime;
+		movement = movement.normalized * speed * Time.deltaTime;
 
 		
 		// Move the player to it's current position plus the movement.
 
-		//playerRigidbody.MovePosition (transform.position + movement);
+		playerRigidbody.MovePosition (transform.position + movement);
 
 
 
@@ -93,18 +80,21 @@ public class PlayerMovement : MonoBehaviour
 
 	
 	void Animating (float h, float v)
-	{		
+	{
+		// Create a boolean that is true if either of the input axes is non-zero.
+		bool walking = h != 0f || v != 0f;
+		
 		// Tell the animator whether or not the player is walking.
 
-		anim.SetFloat ("RWBlendSpeed", Mathf.Max(Mathf.Abs(h),Mathf.Abs(v)));
+		anim.SetFloat ("speed", v);
 //		if (Input.GetKeyDown("space")) { 
 //			anim.SetTrigger ("spin");
 //		}
 		if (isFalling) {
-			anim.SetBool ("IsFalling",true);
+			anim.SetBool ("isFalling",true);
 		} else {
-			anim.SetBool ("IsFalling",false);
-			anim.SetBool ("IsWalking", isWalking);
+			anim.SetBool ("isFalling",false);
+			anim.SetBool ("IsWalking", walking);
 		}
 	}
 	void OnCollisionStay ()
