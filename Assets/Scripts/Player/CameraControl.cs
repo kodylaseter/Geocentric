@@ -9,24 +9,23 @@ public class CameraControl : MonoBehaviour {
 	public float yOffset;
 	public float zOffset;
 	public float scale;
-	
+
 	private Vector3 offset;
 	
 	void Start () {
 		offset = new Vector3( xOffset,yOffset, zOffset);
+		offset = new Vector3( xOffset,yOffset, zOffset);
 	}
 	
 	void LateUpdate() {
+		//IJKL
 		offset = Quaternion.AngleAxis (Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * (offset);
-		offset = Quaternion.AngleAxis (Input.GetAxis("Mouse Y") * turnSpeed, Vector3.right) * (offset);
-		transform.position = player.position + offset; 
-		transform.LookAt(player.position);
+		offset = Quaternion.AngleAxis (Input.GetAxis("Mouse Y") * turnSpeed, transform.right) * (offset);
 
-//		print ("Horizontal: " + Input.GetAxis("Horizontal2"));
-//		print ("Vertical: " + Input.GetAxis("Vertical2"));
-//		offset = Quaternion.AngleAxis (Input.GetAxis("Horizontal2") * turnSpeed, Vector3.up) * (offset);
-//		offset = Quaternion.AngleAxis (Input.GetAxis("Vertical2") * turnSpeed, Vector3.right) * (offset);
-//		transform.position = player.position + offset; 
-//		transform.LookAt(player.position);
+		//Right Joystick (tested by Ben in Windows with PS4 controller)
+		offset = Quaternion.AngleAxis (Input.GetAxisRaw("Horizontal2") * turnSpeed, Vector3.up) * (offset);
+		offset = Quaternion.AngleAxis (Input.GetAxisRaw("Vertical2") * turnSpeed, transform.right) * (offset);
+		transform.position = player.position + offset;
+		transform.LookAt(player.position);
 	}
 }
