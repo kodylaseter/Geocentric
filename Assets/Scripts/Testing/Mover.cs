@@ -15,7 +15,6 @@ public class Mover : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print (timeToMove);
 		if (timeToMove) {
 			platform.GetComponent<Rigidbody> ().velocity = Vector3.up*50f;
 		}
