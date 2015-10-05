@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Warps GameObject player from their current position to the location of the GameObject this script is attached to.
+
 public class CharacterMover : MonoBehaviour {
 
 	public GameObject player;

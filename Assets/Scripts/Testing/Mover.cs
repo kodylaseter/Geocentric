@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// A script that moves a rigid body vertically when its touched by something.
+
 public class Mover : MonoBehaviour {
 
 	bool timeToMove = false;
 	public GameObject destination;
 	public GameObject platform;
-	Vector3 up = new Vector3(0,1,0);
 
 	// Use this for initialization
 	void Start () {

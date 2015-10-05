@@ -154,7 +154,6 @@ public class PlayerMovement_old : MonoBehaviour
 		Vector3 cameraDirection = new Vector3 (cameraAxis.x, 0, cameraAxis.z);  // removes the y component
 		Vector3 cameraRight = Quaternion.Euler(0, 90, 0) * cameraDirection; // gets the "right" component of the vector
 		
-		Quaternion lookDirection = Quaternion.LookRotation (cameraDirection);
 		
 		// Move the character
 		movement = cameraDirection * v;

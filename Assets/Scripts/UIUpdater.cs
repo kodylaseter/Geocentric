@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 
+// Displays how many items are currently spawned in the level
+
 public class UIUpdater : MonoBehaviour {
 
 	public ItemSpawn itemSpawn; 
