@@ -3,7 +3,7 @@ using System.Collections;
 
 // Press 1 - 5 to switch between levels
 
-public class LevelSwitcher : MonoBehaviour {
+public  class LevelSwitcher : MonoBehaviour {
 
 	public string one;
 	public string two;
@@ -13,7 +13,8 @@ public class LevelSwitcher : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		DontDestroyOnLoad (gameObject);
+		Application.LoadLevel (one);
 
 	
 	}
