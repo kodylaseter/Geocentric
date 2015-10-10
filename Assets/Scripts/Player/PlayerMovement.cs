@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
 	// RAGDOLL JUNK // 
 
+	public Collider mainCollider;
 	public Collider[] bodyParts = new Collider[5];
 	
 	void Awake ()
@@ -81,7 +82,8 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	void Ragdoll() 
-	{
+	{	
+		mainCollider.enabled = !mainCollider.enabled;
 		playerRigidbody.isKinematic = !playerRigidbody.isKinematic;
 		anim.enabled = !anim.enabled;
 		foreach (Collider collider in bodyParts) {
