@@ -83,35 +83,6 @@ public class ItemSpawn : MonoBehaviour {
 
 
 
-//		if( Input.GetAxisRaw("changeItem") != 0)
-//		{	
-//			if(m_isAxisInUse == false)
-//			{
-//				// Call your event function here.
-//
-//				if (Input.GetAxisRaw ("changeItem") > 0) {
-//					if (itemNum < items.Length - 1) {
-//						itemNum += 1;
-//					} else {
-//						itemNum = 0;
-//					}
-//					item = items [itemNum];
-//				} else if (Input.GetAxisRaw ("changeItem") < 0) {
-//					if (itemNum > 0) {
-//						itemNum -= 1;
-//					} else {
-//						itemNum = items.Length;
-//					}
-//					item = items[itemNum];
-//				}
-//				
-//				m_isAxisInUse = true;
-//			}
-//		}
-//		if( Input.GetAxisRaw("changeItem") == 0)
-//		{
-//			m_isAxisInUse = false;
-//		} 
 	}
 
 	public int getSpawnedItems() {

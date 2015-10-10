@@ -11,7 +11,11 @@ public class PlayerMovement : MonoBehaviour
 	public bool isFalling;
 	bool isWalking;
 	bool jump;
-	
+	bool ragdoll = false;
+
+	// RAGDOLL JUNK // 
+
+	public Collider[] bodyParts = new Collider[5];
 	
 	void Awake ()
 	{
@@ -25,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
 		// Store the input axes.
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
+
+		if (Input.GetKeyDown(KeyCode.Backspace))
+		{
+			Ragdoll ();
+		}
 		
 		
 		if ((h != 0f || v != 0f) == !isWalking)
@@ -70,4 +79,16 @@ public class PlayerMovement : MonoBehaviour
 	{
 		isFalling = false;
 	}
+
+	void Ragdoll() 
+	{
+		playerRigidbody.isKinematic = !playerRigidbody.isKinematic;
+		anim.enabled = !anim.enabled;
+		foreach (Collider collider in bodyParts) {
+			collider.enabled = !collider.enabled;
+		}
+
+	}
+
+
 }
