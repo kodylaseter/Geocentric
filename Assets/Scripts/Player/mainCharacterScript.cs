@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class mainCharacterScript : MonoBehaviour
 {
 	public float speed = 6f;            // The speed that the player will move at.
 	public float jumpHeight = 10;
@@ -10,8 +11,10 @@ public class PlayerMovement : MonoBehaviour
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
 	public bool isFalling;
 	bool isWalking;
-	bool jump;
+	bool jump = false;
+	public bool twirl;
 	bool ragdoll = false;
+	public SphereCollider fist;
 
 	// RAGDOLL JUNK // 
 
@@ -31,11 +34,18 @@ public class PlayerMovement : MonoBehaviour
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
 
+
 		if (Input.GetKeyDown(KeyCode.Backspace))
 		{
 			Ragdoll ();
 		}
-		
+
+		if (Input.GetKeyDown (KeyCode.LeftShift)) {
+			anim.SetTrigger ("Twirl");
+			twirl = true;
+		} else {
+			twirl = false;
+		}
 		
 		if ((h != 0f || v != 0f) == !isWalking)
 		{
@@ -60,6 +70,9 @@ public class PlayerMovement : MonoBehaviour
 		}
 		
 		if (isWalking) Rotate (h, v);
+
+		// handle physics of attacking
+//		if (twirl & fist.
 		
 	}
 	
@@ -89,8 +102,8 @@ public class PlayerMovement : MonoBehaviour
 		foreach (Collider collider in bodyParts) {
 			collider.enabled = !collider.enabled;
 		}
-
 	}
+
 
 
 }

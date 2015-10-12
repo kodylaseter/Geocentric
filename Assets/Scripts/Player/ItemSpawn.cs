@@ -66,8 +66,9 @@ public class ItemSpawn : MonoBehaviour {
 						itemNum -= 1;
 					} else 
 					{
-						itemNum = items.Length;
+						itemNum = items.Length - 1;
 					}
+					print(itemNum);
 					item = items[itemNum];
 				}
 				
