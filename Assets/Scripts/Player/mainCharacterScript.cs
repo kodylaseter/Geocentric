@@ -15,7 +15,7 @@ public class mainCharacterScript : MonoBehaviour
 	bool isWalking;
 	bool jump = false;
 	public bool twirl;
-	bool ragdoll = false;
+	public bool ragdoll = false;
 
 	// RAGDOLL JUNK // 
 
@@ -129,7 +129,7 @@ public class mainCharacterScript : MonoBehaviour
 //		foreach (Collider collider in bodyParts) {
 //			collider.enabled = !collider.enabled;
 //		}
-
+		ragdoll = true;
 		mainCollider.enabled = false;
 		playerRigidbody.isKinematic = true;
 		anim.enabled = false;
