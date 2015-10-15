@@ -18,9 +18,11 @@ public class attackForce : MonoBehaviour {
 	void OnTriggerStay (Collider other) {
 
 		if (other.tag.Equals ("Item") && player.GetComponent<mainCharacterScript>().twirl) {
+			print ("WOO");
 			Vector3 forceVector = (other.transform.position - player.transform.position).normalized;
 			other.attachedRigidbody.AddForce((Vector3.up+forceVector) * 3000);
 			other.attachedRigidbody.AddTorque(Vector3.Cross(Vector3.up, forceVector) * 2000);
+
 		}
 	}
 }
