@@ -6,6 +6,7 @@ public class mainCharacterScript : MonoBehaviour
 	public float speed = 6f;            // The speed that the player will move at.
 	public float jumpHeight = 10;
 	
+
 	Vector3 movement;                   // The vector to store the direction of the player's movement.
 	Animator anim;                      // Reference to the animator component.
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
@@ -14,7 +15,6 @@ public class mainCharacterScript : MonoBehaviour
 	bool jump = false;
 	public bool twirl;
 	bool ragdoll = false;
-	public SphereCollider fist;
 
 	// RAGDOLL JUNK // 
 
@@ -33,13 +33,13 @@ public class mainCharacterScript : MonoBehaviour
 		// Store the input axes.
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
-
-
+		
+		
 		if (Input.GetKeyDown(KeyCode.Backspace))
 		{
 			Ragdoll ();
 		}
-
+		
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
 			anim.SetTrigger ("Twirl");
 			twirl = true;
@@ -71,6 +71,7 @@ public class mainCharacterScript : MonoBehaviour
 		
 		if (isWalking) Rotate (h, v);
 
+
 		// handle physics of attacking
 //		if (twirl & fist.
 		
@@ -84,7 +85,6 @@ public class mainCharacterScript : MonoBehaviour
 		Vector3 cameraRight = Quaternion.Euler(0, 90, 0) * cameraForward; // gets the "right" component of the vector
 		
 		movement = cameraForward * v + cameraRight * h;
-		
 		playerRigidbody.rotation = Quaternion.LookRotation (movement);
 	}
 	
@@ -94,14 +94,23 @@ public class mainCharacterScript : MonoBehaviour
 		isFalling = false;
 	}
 
-	void Ragdoll() 
+	public void Ragdoll() 
 	{	
-		mainCollider.enabled = !mainCollider.enabled;
-		playerRigidbody.isKinematic = !playerRigidbody.isKinematic;
-		anim.enabled = !anim.enabled;
+//		mainCollider.enabled = !mainCollider.enabled;
+//		playerRigidbody.isKinematic = !playerRigidbody.isKinematic;
+//		anim.enabled = !anim.enabled;
+//		foreach (Collider collider in bodyParts) {
+//			collider.enabled = !collider.enabled;
+//		}
+
+		mainCollider.enabled = false;
+		playerRigidbody.isKinematic = true;
+		anim.enabled = false;
 		foreach (Collider collider in bodyParts) {
-			collider.enabled = !collider.enabled;
+			collider.enabled = true;
 		}
+
+
 	}
 
 

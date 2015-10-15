@@ -28,4 +28,5 @@ public class CameraControl : MonoBehaviour {
 		transform.position = player.position + offset;
 		transform.LookAt(player.position);
 	}
+
 }
