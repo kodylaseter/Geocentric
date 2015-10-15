@@ -16,7 +16,6 @@ public class killbox : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		print ("yay");
 		player.GetComponent<mainCharacterScript>().Ragdoll();
 	}
 }

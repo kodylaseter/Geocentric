@@ -10,11 +10,12 @@ public class mainCharacterScript : MonoBehaviour
 	Vector3 movement;                   // The vector to store the direction of the player's movement.
 	Animator anim;                      // Reference to the animator component.
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
+	CapsuleCollider playerCollider;
 	public bool isFalling;
 	bool isWalking;
 	bool jump = false;
 	public bool twirl;
-	bool ragdoll = false;
+	public bool ragdoll = false;
 
 	// RAGDOLL JUNK // 
 
@@ -25,6 +26,7 @@ public class mainCharacterScript : MonoBehaviour
 	{
 		anim = GetComponent <Animator> ();
 		playerRigidbody = GetComponent <Rigidbody> ();
+		playerCollider = GetComponent <CapsuleCollider> ();
 	}
 	
 	
@@ -33,6 +35,22 @@ public class mainCharacterScript : MonoBehaviour
 		// Store the input axes.
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
+
+		AnimatorStateInfo animState = anim.GetCurrentAnimatorStateInfo (0);
+
+		/* Collider animation for jumping work begins here. */
+		if (animState.IsName ("Jump")) {
+
+			float jumpTime = (float) animState.normalizedTime - Mathf.Floor(animState.normalizedTime);
+			jumpTime = jumpTime * 2 - 1;
+			if (jumpTime > 0)
+			{
+				playerCollider.center.Set(0, Mathf.Lerp(3f, 2.5f, jumpTime), 0);
+				playerCollider.height = Mathf.Lerp(4f, 5f, jumpTime);
+			}
+
+		}
+		/* Collider animation for jumping work ends here. */
 		
 		
 		if (Input.GetKeyDown(KeyCode.Backspace))
@@ -52,7 +70,7 @@ public class mainCharacterScript : MonoBehaviour
 			isWalking = !isWalking;
 		}
 		
-		if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Jump") && !isFalling) 
+		if (!animState.IsName("Jump") && !isFalling) 
 		{
 			anim.SetBool ("IsWalking", isWalking);
 			
@@ -62,6 +80,10 @@ public class mainCharacterScript : MonoBehaviour
 				isFalling = true;
 				anim.SetTrigger ("Jump");
 				anim.SetBool ("IsFalling", true);
+
+				//change the collider (2.5, 5) -> (3, 4) hardcode
+				playerCollider.center.Set(0f, 3f, 0f);
+				playerCollider.height = 4f;
 			}
 			
 			anim.SetFloat ("RWBlendSpeed", Mathf.Max(Mathf.Abs(h),Mathf.Abs(v)));
@@ -92,6 +114,11 @@ public class mainCharacterScript : MonoBehaviour
 	void OnCollisionEnter ()
 	{
 		isFalling = false;
+
+		//rever player collider from jump
+		playerCollider.center.Set (0f, 2.5f, 0f);
+		playerCollider.height = 5f;
+
 	}
 
 	public void Ragdoll() 
@@ -102,7 +129,7 @@ public class mainCharacterScript : MonoBehaviour
 //		foreach (Collider collider in bodyParts) {
 //			collider.enabled = !collider.enabled;
 //		}
-
+		ragdoll = true;
 		mainCollider.enabled = false;
 		playerRigidbody.isKinematic = true;
 		anim.enabled = false;
