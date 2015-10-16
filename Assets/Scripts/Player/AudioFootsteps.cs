@@ -20,11 +20,14 @@ public class AudioFootsteps : MonoBehaviour {
 		if (Physics.Raycast (transform.position, Vector3.down, out hit)) {
 			currentGroundTag = hit.collider.tag;
 		}
-		print (currentGroundTag);
+//		print (currentGroundTag);
 		//requires that a SoundManager singleton exist for every level
 
+		if (currentGroundTag != "Untagged") {
 		playerAudio.clip = SoundManager.SM.GetSound (currentGroundTag);
 		playerAudio.Play ();
+			
+		}
 
 	}
 
