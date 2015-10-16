@@ -23,7 +23,7 @@ public class AudioFootsteps : MonoBehaviour {
 //		print (currentGroundTag);
 		//requires that a SoundManager singleton exist for every level
 
-		if (currentGroundTag != "Untagged") {
+		if (currentGroundTag != "Untagged" && currentGroundTag != "Item" ) {
 		playerAudio.clip = SoundManager.SM.GetSound (currentGroundTag);
 		playerAudio.Play ();
 			
