@@ -25,7 +25,7 @@ public class LavaHit : MonoBehaviour {
 			playerAudio.PlayOneShot(lavadeath);
 			GetComponent<mainCharacterScript>().Ragdoll();
 			playerParticles.Play();
-			//playerBody.AddForce(new Vector3(0,5,0));
+			playerBody.AddForce(new Vector3(0,5,0));
 
 		}
 	}

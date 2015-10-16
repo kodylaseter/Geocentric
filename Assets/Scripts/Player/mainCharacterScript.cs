@@ -43,12 +43,8 @@ public class mainCharacterScript : MonoBehaviour
 
 			float jumpTime = (float) animState.normalizedTime - Mathf.Floor(animState.normalizedTime);
 			jumpTime = jumpTime * 2 - 1;
-			if (jumpTime > 0)
-			{
-				playerCollider.center.Set(0, Mathf.Lerp(3f, 2.5f, jumpTime), 0);
-				playerCollider.height = Mathf.Lerp(4f, 5f, jumpTime);
-			}
-
+			playerCollider.center.Set(0, Mathf.Lerp(3f, 2.5f, jumpTime), 0);
+			playerCollider.height = Mathf.Lerp(4f, 5f, jumpTime);
 		}
 		/* Collider animation for jumping work ends here. */
 		
@@ -80,10 +76,6 @@ public class mainCharacterScript : MonoBehaviour
 				isFalling = true;
 				anim.SetTrigger ("Jump");
 				anim.SetBool ("IsFalling", true);
-
-				//change the collider (2.5, 5) -> (3, 4) hardcode
-				playerCollider.center.Set(0f, 3f, 0f);
-				playerCollider.height = 4f;
 			}
 			
 			anim.SetFloat ("RWBlendSpeed", Mathf.Max(Mathf.Abs(h),Mathf.Abs(v)));
