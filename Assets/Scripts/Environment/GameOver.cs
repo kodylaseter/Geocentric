@@ -16,15 +16,21 @@ public class GameOver : MonoBehaviour
         var otherGameObject = GameObject.Find("Canvas");        //Destroy(col.gameObject);
         if (col.gameObject.tag.Equals("Player"))
         {
-            otherGameObject.GetComponent<Animator>().SetTrigger("GameOver");
+            Animator anim = otherGameObject.GetComponent<Animator>();
+            anim.SetTrigger("GameOver");
 
-            restartTimer += Time.deltaTime;
-
-            if (restartTimer >= restartDelay)
-            {
-                Application.LoadLevel(level);
-            }
+            restartTimer = 0;
+            
         }
 
     }
+
+    void OnCollisionStay(Collision col) {
+        restartTimer += Time.deltaTime;
+        if (restartTimer >= restartDelay)
+        {
+            Application.LoadLevel(level);
+        }
+    }
+
 }
