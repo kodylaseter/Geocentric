@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour{
 	public AudioClip[] defaultFootsteps;
 	public AudioClip[] obsidianFootsteps;
 	public AudioClip[] lavaFootsteps;
+    public AudioClip[] musicBoxChordFootsteps;
 	
 	void Awake()
 	{
@@ -27,7 +28,9 @@ public class SoundManager : MonoBehaviour{
 			return obsidianFootsteps [Random.Range (0, obsidianFootsteps.Length)];
 		} else if (string.Compare (tag, "Lava") == 0) {
 			return lavaFootsteps [Random.Range (0, lavaFootsteps.Length)]; 
-		}
-		else return defaultFootsteps [Random.Range (0, defaultFootsteps.Length)];
+		} else if (string.Compare (tag, "musicBox") == 0) {
+            return musicBoxChordFootsteps[Random.Range(0, musicBoxChordFootsteps.Length)];
+        }
+        else return defaultFootsteps [Random.Range (0, defaultFootsteps.Length)];
 	}
 }
