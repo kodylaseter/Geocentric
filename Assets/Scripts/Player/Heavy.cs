@@ -14,15 +14,10 @@ public class Heavy : MonoBehaviour {
     {
         if (col.gameObject.tag.Equals("Snow"))
         {
-            //print("hey");
-            rex.GetComponent<mainCharacterScript>().speed = 2;
+            print("hey");
+            rex.GetComponent<Animator>().speed = 0.5f;
         }
+        else rex.GetComponent<Animator>().speed = 1f;
     }
 
-    void OnCollisionExit(Collision col) {
-        if (col.gameObject.tag.Equals("Snow"))
-        {
-            rex.GetComponent<mainCharacterScript>().speed = 15;
-        }
-    }
 }
