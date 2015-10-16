@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireParticleScript : MonoBehaviour {
+public class JumpPad : MonoBehaviour {
+
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -11,5 +13,9 @@ public class FireParticleScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void OnCollisionEnter(Collision col){
+
 	}
 }
