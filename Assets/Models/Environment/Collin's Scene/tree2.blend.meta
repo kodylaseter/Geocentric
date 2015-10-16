@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4f3eb5d97c6654941861d8a64aae4c5d
-timeCreated: 1444960120
+guid: f61dba55291be458b8e927b7fea00c50
+timeCreated: 1445017379
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -13,6 +13,16 @@ ModelImporter:
     100010: Cube_005
     100012: Cube_006
     100014: //RootNode
+    100016: Cube_007
+    100018: Cube_008
+    100020: branch1
+    100022: branch2
+    100024: branch3
+    100026: branch4
+    100028: leaf12
+    100030: leaf2
+    100032: leaf3
+    100034: leaf4
     400000: Cube
     400002: Cube_001
     400004: Cube_002
@@ -21,6 +31,16 @@ ModelImporter:
     400010: Cube_005
     400012: Cube_006
     400014: //RootNode
+    400016: Cube_007
+    400018: Cube_008
+    400020: branch1
+    400022: branch2
+    400024: branch3
+    400026: branch4
+    400028: leaf12
+    400030: leaf2
+    400032: leaf3
+    400034: leaf4
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -28,6 +48,16 @@ ModelImporter:
     2300008: Cube_004
     2300010: Cube_005
     2300012: Cube_006
+    2300014: Cube_007
+    2300016: Cube_008
+    2300018: branch1
+    2300020: branch2
+    2300022: branch3
+    2300024: branch4
+    2300026: leaf12
+    2300028: leaf2
+    2300030: leaf3
+    2300032: leaf4
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -35,6 +65,16 @@ ModelImporter:
     3300008: Cube_004
     3300010: Cube_005
     3300012: Cube_006
+    3300014: Cube_007
+    3300016: Cube_008
+    3300018: branch1
+    3300020: branch2
+    3300022: branch3
+    3300024: branch4
+    3300026: leaf12
+    3300028: leaf2
+    3300030: leaf3
+    3300032: leaf4
     4300000: Cube_006
     4300002: Cube_005
     4300004: Cube_004
@@ -42,6 +82,25 @@ ModelImporter:
     4300008: Cube_001
     4300010: Cube
     4300012: Cube_003
+    4300014: Cube_008
+    4300016: Cube_007
+    4300018: leaf2
+    4300020: branch4
+    4300022: branch1
+    4300024: leaf4
+    4300026: leaf3
+    4300028: branch2
+    4300030: branch3
+    4300032: leaf12
+    6400000: branch1
+    6400002: branch2
+    6400004: branch3
+    6400006: branch4
+    6400008: Cube
+    6400010: leaf12
+    6400012: leaf2
+    6400014: leaf3
+    6400016: leaf4
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -69,7 +128,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

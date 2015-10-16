@@ -1,16 +1,24 @@
 fileFormatVersion: 2
-guid: b50e0c4236f604e0fbebdcf23f97f807
-timeCreated: 1444960120
+guid: 0368e556279ab49fb8c88e82c706598f
+timeCreated: 1445018066
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Icosphere
-    6400000: //RootNode
+    100000: leafs
+    100002: stem
+    100004: //RootNode
+    400000: leafs
+    400002: stem
+    400004: //RootNode
+    2300000: leafs
+    2300002: stem
+    3300000: leafs
+    3300002: stem
+    4300000: leafs
+    4300002: stem
+    6400000: leafs
+    6400002: stem
     7400000: Default Take
     9500000: //RootNode
   materials:
