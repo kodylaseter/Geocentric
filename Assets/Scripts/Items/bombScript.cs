@@ -5,6 +5,7 @@ public class bombScript : MonoBehaviour {
 
 	public float fuzeLength;
 	float time;
+	bool explode = false;
 	public SphereCollider blastRadius;
 	public int blastStrength;
 
@@ -15,12 +16,18 @@ public class bombScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (explode == true) {
+			Destroy (gameObject);
+		}
+
 		time -= Time.deltaTime;
 
 		if (time < 0) {
 			blastRadius.enabled = true;
+			explode = true;
 
 		}
+
 	}
 
 //	void explode() {
@@ -33,8 +40,8 @@ public class bombScript : MonoBehaviour {
 			Vector3 forceVector = (other.transform.position - gameObject.transform.position).normalized;
 			other.attachedRigidbody.AddForce((Vector3.up+forceVector) * (blastStrength* 1000));
 			other.attachedRigidbody.AddTorque(Vector3.Cross(Vector3.up, forceVector) * (blastStrength* 1000));
-			
-		}
-		Destroy (gameObject);
+			Destroy (gameObject);
+		} 
+
 	}
 }
