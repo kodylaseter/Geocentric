@@ -130,7 +130,7 @@ public class mainCharacterScript : MonoBehaviour
 //			collider.enabled = !collider.enabled;
 //		}
 		ragdoll = true;
-		mainCollider.enabled = false;
+//		mainCollider.enabled = false;
 		playerRigidbody.isKinematic = true;
 		anim.enabled = false;
 		foreach (Collider collider in bodyParts) {

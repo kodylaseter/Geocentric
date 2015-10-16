@@ -6,7 +6,7 @@ public class ItemSpawn : MonoBehaviour {
 	GameObject item;
 	public int itemNum = 0;
 	public GameObject[] items;
-	public Transform[] spawnPoints;
+	public Transform spawnPoint;
 	public int maxItems = 1000;
 	public int spawnedItems;
 	private bool m_isAxisInUse = false;
@@ -30,8 +30,10 @@ public class ItemSpawn : MonoBehaviour {
 				// Call your event function here.
 				if (spawnedItems < maxItems) 
 				{
-					int spawnPointIndex = Random.Range (0, spawnPoints.Length);
-					Instantiate (item, spawnPoints [spawnPointIndex].position, spawnPoints [spawnPointIndex].rotation);
+//					int spawnPointIndex = Random.Range (0, spawnPoints.Length);
+					print (spawnPoint.position);
+
+					Instantiate (item, spawnPoint.position, spawnPoint.rotation);
 					spawnedItems += 1;
 				}
 				

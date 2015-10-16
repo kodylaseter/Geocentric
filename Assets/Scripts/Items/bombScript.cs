@@ -33,8 +33,8 @@ public class bombScript : MonoBehaviour {
 			Vector3 forceVector = (other.transform.position - gameObject.transform.position).normalized;
 			other.attachedRigidbody.AddForce((Vector3.up+forceVector) * (blastStrength* 1000));
 			other.attachedRigidbody.AddTorque(Vector3.Cross(Vector3.up, forceVector) * (blastStrength* 1000));
-			
+			Destroy (gameObject);
 		}
-		Destroy (gameObject);
+
 	}
 }
