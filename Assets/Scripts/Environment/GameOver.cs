@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Team Gemometry
+// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
+
 // Loads specified level on collision with Player
 
 public class GameOver : MonoBehaviour

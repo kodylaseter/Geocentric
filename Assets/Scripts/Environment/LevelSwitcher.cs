@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Team Gemometry
+// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
+
 // Press 1 - 5 to switch between levels
 
 public  class LevelSwitcher : MonoBehaviour {

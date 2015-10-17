@@ -1,6 +1,9 @@
 ﻿
 using UnityEngine;
 
+// Team Gemometry
+// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
+
 public class ragdoll : MonoBehaviour
 {
 	

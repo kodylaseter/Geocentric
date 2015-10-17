@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 
-// Displays how many items are currently spawned in the level
+// Team Gemometry
+// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
 
 public class UIUpdater : MonoBehaviour {
 

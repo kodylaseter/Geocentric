@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+
+// Team Gemometry
+// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
 
 public class ItemSpawn : MonoBehaviour {
 
@@ -11,7 +15,7 @@ public class ItemSpawn : MonoBehaviour {
 	public int spawnedItems;
 	private bool m_isAxisInUse = false;
 	private bool m_placeAxisInUse = false;
-
+	public Text spawnText;
 
 	// Use this for initialization
 	void Start () {
@@ -81,7 +85,7 @@ public class ItemSpawn : MonoBehaviour {
 
 		// Handles Changing Items
 
-
+		spawnText.text = "Item to Spawn: " + items [itemNum].name;
 
 	}
 

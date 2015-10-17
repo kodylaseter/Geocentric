@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 
+// Team Gemometry
+// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
+
 public class ItemSpawnWithText : MonoBehaviour {
 
 	GameObject item;

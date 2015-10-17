@@ -1,6 +1,9 @@
 ﻿
 using UnityEngine;
 
+// Team Gemometry
+// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
+
 public class mainCharacterScript : MonoBehaviour
 {
 	public float speed = 6f;            // The speed that the player will move at.

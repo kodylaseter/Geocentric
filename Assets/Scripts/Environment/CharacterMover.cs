@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Team Gemometry
+// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
+
 // Warps GameObject player from their current position to the location of the GameObject this script is attached to.
 
 public class CharacterMover : MonoBehaviour {
