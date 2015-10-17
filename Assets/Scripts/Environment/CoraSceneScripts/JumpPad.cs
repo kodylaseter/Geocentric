@@ -2,7 +2,7 @@
 using System.Collections;
 
 // Team Gemometry
-// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
+// Cora Wilson
 
 public class JumpPad : MonoBehaviour {
 

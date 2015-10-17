@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Team Gemometry
+// Monet Tomioka
+
 public class Heavy : MonoBehaviour {
     GameObject rex;
 
