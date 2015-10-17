@@ -19,7 +19,7 @@ public class AudioFootsteps : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, Vector3.down, out hit)) {
 			currentGroundTag = hit.collider.tag;
-			print (hit.collider.gameObject.name);
+//			print (hit.collider.gameObject.name);
 		}
 		//print (currentGroundTag);
 
