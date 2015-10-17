@@ -23,9 +23,9 @@ public class LavaHit : MonoBehaviour {
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag.Equals("Lava")){
 			playerAudio.PlayOneShot(lavadeath);
+			playerBody.AddForce(new Vector3(0,5,0));
 			GetComponent<mainCharacterScript>().Ragdoll();
 			playerParticles.Play();
-			playerBody.AddForce(new Vector3(0,5,0));
 
 		}
 	}
