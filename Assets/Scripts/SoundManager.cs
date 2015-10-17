@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour{
 	public AudioClip[] collinGrass;
 	public AudioClip[] collinStone;
     public AudioClip[] musicBoxChordFootsteps;
+	public AudioClip[] crackedEarthfootsteps;
 	
 	void Awake()
 	{
@@ -38,8 +39,11 @@ public class SoundManager : MonoBehaviour{
 		} else if (string.Compare (tag, "collinGrass") == 0) {
 			return collinGrass [Random.Range (0, collinGrass.Length)]; 
 		} else if (string.Compare (tag, "musicBox") == 0) {
-            return musicBoxChordFootsteps[Random.Range(0, musicBoxChordFootsteps.Length)];
-        }
+			return musicBoxChordFootsteps [Random.Range (0, musicBoxChordFootsteps.Length)];
+		} else if (string.Compare (tag, "CrackedFloor") == 0) {
+			return crackedEarthfootsteps [Random.Range (0, crackedEarthfootsteps.Length)];
+
+		}
         else return defaultFootsteps [Random.Range (0, defaultFootsteps.Length)];
 	}
 }
