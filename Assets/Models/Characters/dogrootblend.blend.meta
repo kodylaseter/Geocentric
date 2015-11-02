@@ -37,7 +37,9 @@ ModelImporter:
     400028: tail
     4300000: Cube_003
     7400000: Default Take
-    7400002: ArmatureAction
+    7400002: Dog-Walk
+    7400004: Dog-Idle
+    7400006: Dog-Run
     9500000: //RootNode
     13700000: Cube_003
   materials:
@@ -53,13 +55,181 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Dog-Walk
+      takeName: ArmatureAction
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/main
+        weight: 1
+      - path: Armature/main/body
+        weight: 1
+      - path: Armature/main/fore_upper_l
+        weight: 1
+      - path: Armature/main/fore_upper_l/fore_lower_l
+        weight: 1
+      - path: Armature/main/fore_upper_r
+        weight: 1
+      - path: Armature/main/fore_upper_r/fore_lower_r
+        weight: 1
+      - path: Armature/main/head
+        weight: 1
+      - path: Armature/main/hind_upper_l
+        weight: 1
+      - path: Armature/main/hind_upper_l/hind_lower_l
+        weight: 1
+      - path: Armature/main/hind_upper_r
+        weight: 1
+      - path: Armature/main/hind_upper_r/hind_lower_r
+        weight: 1
+      - path: Armature/main/tail
+        weight: 1
+      - path: Cube_003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dog-Idle
+      takeName: ArmatureAction
+      firstFrame: 130
+      lastFrame: 199
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 60
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/main
+        weight: 1
+      - path: Armature/main/body
+        weight: 1
+      - path: Armature/main/fore_upper_l
+        weight: 1
+      - path: Armature/main/fore_upper_l/fore_lower_l
+        weight: 1
+      - path: Armature/main/fore_upper_r
+        weight: 1
+      - path: Armature/main/fore_upper_r/fore_lower_r
+        weight: 1
+      - path: Armature/main/head
+        weight: 1
+      - path: Armature/main/hind_upper_l
+        weight: 1
+      - path: Armature/main/hind_upper_l/hind_lower_l
+        weight: 1
+      - path: Armature/main/hind_upper_r
+        weight: 1
+      - path: Armature/main/hind_upper_r/hind_lower_r
+        weight: 1
+      - path: Armature/main/tail
+        weight: 1
+      - path: Cube_003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dog-Run
+      takeName: ArmatureAction
+      firstFrame: 40
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/main
+        weight: 1
+      - path: Armature/main/body
+        weight: 1
+      - path: Armature/main/fore_upper_l
+        weight: 1
+      - path: Armature/main/fore_upper_l/fore_lower_l
+        weight: 1
+      - path: Armature/main/fore_upper_r
+        weight: 1
+      - path: Armature/main/fore_upper_r/fore_lower_r
+        weight: 1
+      - path: Armature/main/head
+        weight: 1
+      - path: Armature/main/hind_upper_l
+        weight: 1
+      - path: Armature/main/hind_upper_l/hind_lower_l
+        weight: 1
+      - path: Armature/main/hind_upper_r
+        weight: 1
+      - path: Armature/main/hind_upper_r/hind_lower_r
+        weight: 1
+      - path: Armature/main/tail
+        weight: 1
+      - path: Cube_003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -95,7 +265,7 @@ ModelImporter:
     armStretch: .0500000007
     legStretch: .0500000007
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: main
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2

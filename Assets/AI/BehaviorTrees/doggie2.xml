@@ -1,0 +1,1 @@
+<behaviortree version="1.1" repeatuntil="" name="doggie" debugbreak="False"><parallel tiebreaker="fail" succeed="all" repeatuntil="" name="parallel" fail="any" debugbreak="False"><animate repeatuntil="running" name="animate" debugbreak="False" animationstate="Walk" /></parallel></behaviortree>
