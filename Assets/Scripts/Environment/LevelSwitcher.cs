@@ -17,7 +17,7 @@ public  class LevelSwitcher : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (gameObject);
-		Application.LoadLevel (one);
+		//Application.LoadLevel (one);
 
 	
 	}
