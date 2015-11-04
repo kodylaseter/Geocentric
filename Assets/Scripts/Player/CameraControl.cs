@@ -27,8 +27,19 @@ public class CameraControl : MonoBehaviour {
 	
 	void LateUpdate() {
 		//IJKL
-		offset = Quaternion.AngleAxis (Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * (offset);
-		offset = Quaternion.AngleAxis (Input.GetAxis("Mouse Y") * turnSpeed, transform.right) * (offset);
+		//offset = Quaternion.AngleAxis (Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * (offset);
+		//offset = Quaternion.AngleAxis (Input.GetAxis("Mouse Y") * turnSpeed, transform.right) * (offset);
+		
+		//Mouse
+		if (Input.GetMouseButton (0)) {
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+			offset = Quaternion.AngleAxis (Input.GetAxis ("Mouse X") * turnSpeed, Vector3.up) * (offset);
+			offset = Quaternion.AngleAxis (Input.GetAxis ("Mouse Y") * -1 * turnSpeed, transform.right) * (offset);
+		} else {
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+		}
 
 		//Right Joystick (tested by Ben in Windows with PS4 controller)
 		offset = Quaternion.AngleAxis (Input.GetAxisRaw("Horizontal2") * turnSpeed, Vector3.up) * (offset);
