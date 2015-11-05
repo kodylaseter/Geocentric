@@ -16,7 +16,7 @@ public class ItemSpawnCycle : MonoBehaviour {
 	private bool m_isAxisInUse = false; 
 	private bool m_placeAxisInUse = false;
 
-	public Text spawnText;
+	//public Text spawnText;
 	public Image prevSpawnItem;
 	public Image currentSpawnItem;
 	public Image nextSpawnItem;
@@ -25,6 +25,7 @@ public class ItemSpawnCycle : MonoBehaviour {
 	private int nextItemNum;
 	private int prevItemNum;
 	private Sprite[] itemIcons;
+    private Sprite xSprite;
 
 	//get small image of thing
 	//if end of list, grab pic from beginning
@@ -35,6 +36,7 @@ public class ItemSpawnCycle : MonoBehaviour {
 	void Start () {
 		item = items [itemNum];
 		itemIcons = CreateIconArray ("Icons");
+        xSprite = Resources.Load("Icons/xSprite", typeof(Sprite)) as Sprite;
 		//load up a map of item things
 		//for item in items, get appropriate picture, add to array
 		//have some "default" star for unaccounted for spawns
@@ -67,7 +69,7 @@ public class ItemSpawnCycle : MonoBehaviour {
 
 		// Handles Changing Items
 
-		if( Input.GetAxisRaw("changeItem") != 0)
+		if( Input.GetAxisRaw("changeItem") != 0 && itemIcons.Length > 1) //only switch if there are multiple items
 		{	
 			if(m_placeAxisInUse == false)
 			{
@@ -108,12 +110,19 @@ public class ItemSpawnCycle : MonoBehaviour {
 		print ("CURRENT" + itemNum);
 		print ("NEXT" + nextItemNum);
 
-		prevSpawnItem.sprite = itemIcons [prevItemNum];
-		currentSpawnItem.sprite = itemIcons [itemNum];
-		nextSpawnItem.sprite = itemIcons [nextItemNum];
-		spawnText.text = "Item to Spawn: " + items [itemNum].name;
-
-
+        if (itemIcons.Length > 1)
+        {
+            prevSpawnItem.sprite = itemIcons[prevItemNum];
+            currentSpawnItem.sprite = itemIcons[itemNum];
+            nextSpawnItem.sprite = itemIcons[nextItemNum];
+        }
+        else
+        {
+            prevSpawnItem.sprite = xSprite;
+            nextSpawnItem.sprite = xSprite;
+            currentSpawnItem.sprite = itemIcons[itemNum];
+            
+        }
 
 	}
 
