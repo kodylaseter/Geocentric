@@ -1,0 +1,321 @@
+fileFormatVersion: 2
+guid: f22ebdda8bc310e4d9d1ca2f9131f67b
+timeCreated: 1446845049
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: DownArm_L
+    100006: DownArm_R
+    100008: DownLeg_L
+    100010: DownLeg_R
+    100012: Man
+    100014: //RootNode
+    100016: Superbone
+    100018: Torso
+    100020: UpArm_L
+    100022: UpArm_R
+    100024: UpLeg_L
+    100026: UpLeg_R
+    400000: Armature
+    400002: Bone
+    400004: DownArm_L
+    400006: DownArm_R
+    400008: DownLeg_L
+    400010: DownLeg_R
+    400012: Man
+    400014: //RootNode
+    400016: Superbone
+    400018: Torso
+    400020: UpArm_L
+    400022: UpArm_R
+    400024: UpLeg_L
+    400026: UpLeg_R
+    4300000: Man
+    7400000: Default Take
+    7400002: Walk
+    7400004: Run
+    7400006: Idle
+    7400008: Drill
+    9500000: //RootNode
+    13700000: Man
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: ArmatureAction
+      firstFrame: 312
+      lastFrame: 383
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Superbone
+        weight: 1
+      - path: Armature/Superbone/Bone
+        weight: 1
+      - path: Armature/Superbone/Bone/Torso
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_L/DownArm_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_R/DownArm_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_L/DownLeg_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_R/DownLeg_R
+        weight: 1
+      - path: Man
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Default Take
+      firstFrame: 444
+      lastFrame: 459
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Superbone
+        weight: 1
+      - path: Armature/Superbone/Bone
+        weight: 1
+      - path: Armature/Superbone/Bone/Torso
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_L/DownArm_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_R/DownArm_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_L/DownLeg_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_R/DownLeg_R
+        weight: 1
+      - path: Man
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Superbone
+        weight: 1
+      - path: Armature/Superbone/Bone
+        weight: 1
+      - path: Armature/Superbone/Bone/Torso
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_L/DownArm_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_R/DownArm_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_L/DownLeg_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_R/DownLeg_R
+        weight: 1
+      - path: Man
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Drill
+      takeName: Default Take
+      firstFrame: 500
+      lastFrame: 524
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Superbone
+        weight: 1
+      - path: Armature/Superbone/Bone
+        weight: 1
+      - path: Armature/Superbone/Bone/Torso
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_L/DownArm_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpArm_R/DownArm_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_L/DownLeg_L
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_R
+        weight: 1
+      - path: Armature/Superbone/Bone/UpLeg_R/DownLeg_R
+        weight: 1
+      - path: Man
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: Superbone
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
