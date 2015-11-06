@@ -21,6 +21,7 @@ public class AudioFootsteps : MonoBehaviour {
 		//print (currentGroundTag);
 		currentGroundTag = groundTagger.GetGroundTag ();
 		if (currentGroundTag != "Item") {
+			if (SoundManager.SM == null) return;
 			playerAudio.clip = SoundManager.SM.GetSound (currentGroundTag);
 			//print (playerAudio.clip.name);
 			playerAudio.Play ();
