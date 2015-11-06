@@ -24,16 +24,6 @@ public  class LevelSwitcher : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Alpha1)) {
-			Application.LoadLevel(one);
-		} else if (Input.GetKeyDown(KeyCode.Alpha2)) {
-			Application.LoadLevel(two);
-		} else if (Input.GetKeyDown(KeyCode.Alpha3)) {
-			Application.LoadLevel(three);
-		} else if (Input.GetKeyDown(KeyCode.Alpha4)) {
-			Application.LoadLevel(four);
-		} else if (Input.GetKeyDown(KeyCode.Alpha5)) {
-			Application.LoadLevel(five);
 		if (Input.GetKeyDown (KeyCode.Alpha1)) {
 			Application.LoadLevel (one);
 		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
