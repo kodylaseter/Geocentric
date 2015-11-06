@@ -34,6 +34,14 @@ public  class LevelSwitcher : MonoBehaviour {
 			Application.LoadLevel(four);
 		} else if (Input.GetKeyDown(KeyCode.Alpha5)) {
 			Application.LoadLevel(five);
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+			Application.LoadLevel (one);
+		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
+			Application.LoadLevel (two);
+		} else if (Input.GetKeyDown (KeyCode.Alpha3)) {
+			Application.LoadLevel (three);
+		}  else if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.LoadLevel ("StartMenu");
 		}
 	}
 
