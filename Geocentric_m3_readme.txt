@@ -1,5 +1,4 @@
 Team Geocentric README
-//"tabs" are 4 spaces yall
 
 i. NAMES
     Ben Seco, ben.seco@gatech.edu, ~Bseco3
@@ -32,7 +31,7 @@ v. GRADING STEPS
     When you start the game, a menu will pop up, letting the user choose to either start the game or select a specific level to play. Starting the game will put you in Scene 1. From there, the user can interact with the AI and objects in Scene 1 as necessary. The user may press the number keys 2 and 3 to switch to Scene 2 or 3, respectively.
 
 vi. STARTING SCENE
-    Start in scene 1.
+    Start in StartMenu.
 
 vii. URL
-    http://blah
+    http://www.prism.gatech.edu/~ccaldwell9/m3ai.html
