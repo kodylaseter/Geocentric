@@ -20,6 +20,8 @@ public class AudioFootsteps : MonoBehaviour {
 		//get tag
 		//print (currentGroundTag);
 		currentGroundTag = groundTagger.GetGroundTag ();
+		if (SoundManager.SM == null)
+			return;
 		if (currentGroundTag != "Item" && SoundManager.SM.PlaySoundEffects()) {
 			if (SoundManager.SM == null) return;
             //if (SoundManager.SM.GetFootstepSound(currentGroundTag) == null) return; //se probably silent; or error
