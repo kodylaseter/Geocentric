@@ -19,17 +19,13 @@ public class CameraControl : MonoBehaviour {
 	private Vector3 offset;
 	
 	void Start () {
-
-		offset = new Vector3( xOffset,yOffset, zOffset);
-		offset = new Vector3( xOffset,yOffset, zOffset);
+		offset = (player.transform.forward * zOffset) + new Vector3 (0, yOffset, 0); ;
+//		offset = new Vector3( xOffset,yOffset, zOffset);
 		playerPosition = player.transform;
 	}
 	
 	void LateUpdate() {
-		//IJKL
-		//offset = Quaternion.AngleAxis (Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * (offset);
-		//offset = Quaternion.AngleAxis (Input.GetAxis("Mouse Y") * turnSpeed, transform.right) * (offset);
-		
+
 		//Mouse
 		if (Input.GetMouseButton (0)) {
 			Cursor.lockState = CursorLockMode.Locked;

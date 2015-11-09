@@ -84,8 +84,10 @@ public class ItemSpawn : MonoBehaviour {
 		} 
 
 		// Handles Changing Items
+		if (spawnText != null) {
+			spawnText.text = "Item to Spawn: " + items [itemNum].name;
+		}
 
-		spawnText.text = "Item to Spawn: " + items [itemNum].name;
 
 	}
 
