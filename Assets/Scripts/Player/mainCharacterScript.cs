@@ -79,7 +79,7 @@ public class mainCharacterScript : MonoBehaviour
 				isFalling = true;
 				anim.SetTrigger ("Jump");
 				anim.SetBool ("IsFalling", true);
-				anim.SetBool ("IsWalking", false);
+				//anim.SetBool ("IsWalking", false);
 			}
 			
 			anim.SetFloat ("RWBlendSpeed", Mathf.Max(Mathf.Abs(h),Mathf.Abs(v)));
@@ -109,13 +109,15 @@ public class mainCharacterScript : MonoBehaviour
 	
 	void OnCollisionEnter (Collision collision)
 	{
-		foreach (ContactPoint contact in collision.contacts) {
-			if (Vector3.Dot(contact.normal, Vector3.up) > 0)
-			{
-				isFalling = false;
-				break;
-			}
-		}
+		isFalling = false;
+		//commenting this out until we reevaluate jumping
+//		foreach (ContactPoint contact in collision.contacts) {
+//			if (Vector3.Dot(contact.normal, Vector3.up) > 0)
+//			{
+//				isFalling = false;
+//				break;
+//			}
+//		}
 
 		//rever player collider from jump
 		playerCollider.center.Set (0f, 2.5f, 0f);
