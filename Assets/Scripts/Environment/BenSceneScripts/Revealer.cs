@@ -6,17 +6,18 @@ using System.Collections;
 
 // Reloads current level when the player tag touches an object
 
-public class Respawn : MonoBehaviour {
-	
-	public string level;
+public class Revealer : MonoBehaviour {
+
+	public GameObject Key;
+	public GameObject[] Reveal;
 	
 	void OnCollisionEnter (Collision col)
 	{	
 		//Destroy(col.gameObject);
-		if (col.gameObject.tag.Equals ("Player")) {
-			Application.LoadLevel(Application.loadedLevel);
+		if (col.gameObject == Key) {
+			foreach (GameObject gameObject in Reveal)
+				gameObject.SetActive(true);
 		}
-		else Destroy(col.gameObject);
 		
 	}
 }
