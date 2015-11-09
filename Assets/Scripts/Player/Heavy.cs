@@ -13,7 +13,7 @@ public class Heavy : MonoBehaviour {
 
     void OnCollisionEnter(Collision col){
         if (col.gameObject.tag.Equals("Snow")){
-            rex.GetComponent<Animator>().speed = 0.5f;
+            rex.GetComponent<Animator>().speed = 0.8f;
         }
         else rex.GetComponent<Animator>().speed = 1f;
     }
