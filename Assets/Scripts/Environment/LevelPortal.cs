@@ -15,6 +15,7 @@ public class LevelPortal : MonoBehaviour {
 		//Destroy(col.gameObject);
 		if (col.gameObject.tag.Equals ("Player")) {
 			Application.LoadLevel(level);
+            SoundManager.SM.ChangeBGMusic(level);
 		}
 
 	}
