@@ -48,11 +48,13 @@ public class MenuControl : MonoBehaviour {
 			CameraMove (levelSelect);
 		} else if (gameObject.name == "Back_Select") {
 			CameraMove (mainPosition);
-		} else if (gameObject.name == "Dog_Selector") {
+		} else if (gameObject.name == "Ben_Selector") {
+			Application.LoadLevel ("Ben");
+		} else if (gameObject.name == "Monet_Selector") {
 			Application.LoadLevel ("Monet");
-		} else if (gameObject.name == "Little_Guys_Selector") {
-			Application.LoadLevel ("newCollinGarden");
-		} else if (gameObject.name == "Scary_Guy_Selector") {
+		} else if (gameObject.name == "Collin_Selector") {
+			Application.LoadLevel ("bombGolf");
+		} else if (gameObject.name == "Kody_Selector") {
 			Application.LoadLevel ("Kody");
 		}
 
