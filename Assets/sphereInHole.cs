@@ -22,7 +22,7 @@ public class sphereInHole : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		door.transform.position = door.transform.position + transform.up * -12;
-		flag.GetComponent<Renderer> ().material.color = Color.red;
-		flagflag.GetComponent<Renderer> ().material.color = Color.red;
+		flag.GetComponent<Renderer> ().material.color = Color.green;
+		flagflag.GetComponent<Renderer> ().material.color = Color.green;
 	}
 }

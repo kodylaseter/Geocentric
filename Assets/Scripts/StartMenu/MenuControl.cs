@@ -43,7 +43,7 @@ public class MenuControl : MonoBehaviour {
 
 	void OnMouseDown() {
 		if (gameObject.name == "Start_Game_Text") {
-			Application.LoadLevel ("Ben");
+			Application.LoadLevel ("s000 - Walk Forward Alpha");
 		} else if (gameObject.name == "Level_Select_Text") {
 			CameraMove (levelSelect);
 		} else if (gameObject.name == "Back_Select") {
