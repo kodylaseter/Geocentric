@@ -136,9 +136,9 @@ public class mainCharacterScript : MonoBehaviour
 		mainCollider.enabled = false;
 		playerRigidbody.isKinematic = true;
 		anim.enabled = false;
-		foreach (Collider collider in bodyParts) {
-			collider.enabled = true;
-		}
+//		foreach (Collider collider in bodyParts) {
+//			collider.enabled = true;
+//		}
 
 
 	}
