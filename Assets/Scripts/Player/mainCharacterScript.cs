@@ -133,12 +133,19 @@ public class mainCharacterScript : MonoBehaviour
 //			collider.enabled = !collider.enabled;
 //		}
 		ragdoll = true;
-		mainCollider.enabled = false;
+
+
+//		transform.position += new Vector3 (0, 50, 0);
 		playerRigidbody.isKinematic = true;
+		playerRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+		mainCollider.enabled = false;
+
 		anim.enabled = false;
 		foreach (Collider collider in bodyParts) {
 			collider.enabled = true;
+
 		}
+		playerRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 
 
 	}
