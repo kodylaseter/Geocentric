@@ -1,24 +1,45 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MenuControl : MonoBehaviour {
 
 	private Vector3 levelSelectorPoint;
 	private Vector3 mainPoint;
+	public bool notLevelSelector; // is this menu object a level select?
+	public string level; // what level/menu does this go to?
 	
 	private Transform cam;
 	private Transform currentPoint;
 	private Transform mainPosition;
-	private Transform levelSelect;
+//	private Transform levelSelect;
+
+	private Transform MainMenuCameraPositionTransform;
+	private Transform LevelSelectCameraPositionTransform;
+	private Transform destinationTransform;
+
+	void Awake() {
+//		MainMenuCameraPositionTransform = GameObject.Find ("MainMenuCameraPosition").transform;
+//		LevelSelectCameraPositionTransform = GameObject.Find ("LevelSelectCameraPosition").transform;
+//		destinationTransform = MainMenuCameraPositionTransform;
+		
+	}
 	
 	void Start () {
-		levelSelectorPoint = GameObject.Find("levelSelectPoint").transform.position;
-		levelSelect = GameObject.Find ("LevelPosition").transform;
-		mainPosition = GameObject.Find ("mainPoint").transform;
-		mainPoint = GameObject.Find("mainPoint").transform.position;
+//		Debug.Log("Start called.");
+//		levelSelect = GameObject.Find ("LevelPosition").transform;
+//		mainPosition = GameObject.Find ("mainPoint").transform;
+//		mainPoint = GameObject.Find("mainPoint").transform.position;
 
-		cam = GameObject.Find("Camera").transform;
+//		print (LevelSelectCameraPositionTransform.forward);
+
+//		cam = GameObject.Find("Camera").transform;
 //		currentPoint.position = mainPoint;
+	}
+
+	void Update() {
+//		print (cam.forward);
+//		print (destinationTransform.forward);
+//		cam.forward = Vector3.Slerp (cam.forward, destinationTransform.forward, .1f);
 	}
 	
 	// Update is called once per frame
@@ -26,7 +47,10 @@ public class MenuControl : MonoBehaviour {
 //		if (currentPoint.position == levelSelectorPoint) {
 //			int x = 1;
 //		}
-		cam.LookAt(currentPoint);
+//		cam.LookAt(currentPoint);
+//
+//		print (cam.forward);
+//		cam.forward = Vector3.Slerp (cam.forward, destinationTransform.forward, .5f);
 	}
 	
 	void OnMouseOver() {
@@ -42,23 +66,29 @@ public class MenuControl : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		if (gameObject.name == "Start_Game_Text") {
-			Application.LoadLevel ("s000 - Walk Forward Alpha");
-		} else if (gameObject.name == "Level_Select_Text") {
-			CameraMove (levelSelect);
-		} else if (gameObject.name == "Back_Select") {
-			CameraMove (mainPosition);
-		} else if (gameObject.name == "Ben_Selector") {
-			Application.LoadLevel ("Ben");
-		} else if (gameObject.name == "Monet_Selector") {
-			Application.LoadLevel ("Monet");
-		} else if (gameObject.name == "Collin_Selector") {
-			Application.LoadLevel ("bombGolf");
-		} else if (gameObject.name == "Kody_Selector") {
-			Application.LoadLevel ("Kody");
-		} else if (gameObject.name == "Credits") {
-			Application.LoadLevel ("starfield");
+		if (notLevelSelector) {
+			GameObject.Find ("Camera").GetComponent<mainMenuCameraScript>().destinationSwitch();
+		} else {
+			Application.LoadLevel (level);
 		}
+
+//		if (gameObject.name == "Start_Game_Text") {
+//			Application.LoadLevel ("s000 - Walk Forward Alpha");
+//		} else if (gameObject.name == "Level_Select_Text") {
+//			destinationTransform = LevelSelectCameraPositionTransform;
+//		} else if (gameObject.name == "Back_Select") {
+//			destinationTransform = MainMenuCameraPositionTransform;
+//		} else if (gameObject.name == "Ben_Selector") {
+//			Application.LoadLevel ("Ben");
+//		} else if (gameObject.name == "Monet_Selector") {
+//			Application.LoadLevel ("Monet");
+//		} else if (gameObject.name == "Collin_Selector") {
+//			Application.LoadLevel ("bombGolf");
+//		} else if (gameObject.name == "Kody_Selector") {
+//			Application.LoadLevel ("Kody");
+//		} else if (gameObject.name == "Credits") {
+//			Application.LoadLevel ("starfield");
+//		}
 
 	}
 	
@@ -68,10 +98,11 @@ public class MenuControl : MonoBehaviour {
 
 	void CameraMove(Transform look) {
 //		print (levelSelect.position);
+
 		cam.transform.LookAt (look);
 //		rotationX = Vector3.Lerp(cam.transform.localEulerAngles, transform.eulerAngles, 1.0f * Time.deltaTime).x;
 	}
-	void Selected() {
-
-	}
+//	void Selected() {
+//
+//	}
 }
