@@ -33,12 +33,12 @@ public class MenuControl : MonoBehaviour {
 		string objName = transform.name;
 		TextMesh tm = GetComponent<TextMesh>();
 		tm.color = Color.red;
-		if( Input.GetAxisRaw("placeItem") != 0) {
-			switch (objName) {
-				case "Start_Game_Text": Application.LoadLevel("Kody"); break;
-				case "Level_Select_Text": currentPoint.position = levelSelectorPoint; break;
-			}
-		}
+//		if( Input.GetAxisRaw("placeItem") != 0) {
+//			switch (objName) {
+//				case "Start_Game_Text": Application.LoadLevel("Kody"); break;
+//				case "Level_Select_Text": currentPoint.position = levelSelectorPoint; break;
+//			}
+//		}
 	}
 
 	void OnMouseDown() {
@@ -56,6 +56,8 @@ public class MenuControl : MonoBehaviour {
 			Application.LoadLevel ("bombGolf");
 		} else if (gameObject.name == "Kody_Selector") {
 			Application.LoadLevel ("Kody");
+		} else if (gameObject.name == "Credits") {
+			Application.LoadLevel ("starfield");
 		}
 
 	}
@@ -68,5 +70,8 @@ public class MenuControl : MonoBehaviour {
 //		print (levelSelect.position);
 		cam.transform.LookAt (look);
 //		rotationX = Vector3.Lerp(cam.transform.localEulerAngles, transform.eulerAngles, 1.0f * Time.deltaTime).x;
+	}
+	void Selected() {
+
 	}
 }
