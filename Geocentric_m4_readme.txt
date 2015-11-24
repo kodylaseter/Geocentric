@@ -18,17 +18,21 @@ UI Components
 5. Credits of game: document all devs on team & their majors, document 3rd party content you used
 6. Credits must be visually compelling
 
-Particles
+Particles - You can find them on our various levels!
 7. At least 2 different particle effects, each needs to be 2 different particle systems. Choose appropriate shape for spawning them
+	Mystery Land: Spawns from plane
+	Cave Climbing: Uses a cone to spawn particles.
 8. In one particle effect, leverage changing SIZE of particles with one of the modules, particles must change size during the life of the particle, not just a curve of start size.
-	Ben's level: Secondary "splashes" on the floor produce particles that shrink over their lifespan
+	Mystery Land: Secondary "splashes" on the floor produce particles that shrink over their lifespan
+	Cave Climbing: Size, rotation, and color (opacity) change over time. Size changes by speed as well.
 9. In one particle effect, leverage changing SPEED of particles
 10. In one particle effect, leverage a 2D custom material
-	Ben's level: "Meteor shower" uses custom star texture
+	Mystery Land: "Meteor shower" uses custom star texture
+	Cave Climbing: Lava emits a custom smoke texture
 11. In one particle effect, leverage sub-emitters.
-	Ben's level: "Meteor shower" "splashes" on the floor, producing a burst from a secondary (sub) emitter  
+	Mystery Land: "Meteor shower" "splashes" on the floor, producing a burst from a secondary (sub) emitter  
 12. Trigger one particle effect based on events in game.
-	Ben's level: Player collides with "star" goal platforms and they emit a burst of defaults
+	Mystery Land: Player collides with "star" goal platforms and they emit a burst of defaults
 
 iii. RESOURCES
     We made all materials we are using in the game, including all the character models, items, UI components, and audio. We used Adobe Photoshop, Paint Tool SAI, Blender, and Sekaiju.
