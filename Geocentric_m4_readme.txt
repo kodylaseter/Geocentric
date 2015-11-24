@@ -14,9 +14,12 @@ UI Components
 1. Introduction menu scene: title of game, team name, start button, credits
 2. Background of menu must be visually appealing and animated
 3. Menu items should be well positioned/styled (readable text, no weird overlapping), elements should be customized for your game (do not use default UI selections for font. Create custom button image for clickable elemnts of interface & document your reasoning for design)
+	We chose a retro gaming font, that had lots of angles, because it looks like our worlds and main character.
 4. Menu system should be navigable with controller/keyboard in addition to normal mouse clicking: highlighting, able to go up/down left/right, loop through list
+	Use up/down on gamepad or w/s to move up and down. You can also use your mouse!
 5. Credits of game: document all devs on team & their majors, document 3rd party content you used
 6. Credits must be visually compelling
+	(you have to click twice to exit the cr
 
 Particles - You can find them on our various levels!
 7. At least 2 different particle effects, each needs to be 2 different particle systems. Choose appropriate shape for spawning them
