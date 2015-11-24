@@ -8,7 +8,7 @@ i. NAMES
     Kody Laseter, klaseter@gatech.edu, ~Klaseter
 
 ii. REQUIREMENTS COMPLETED
-//FOR THE TEAM: we have 1, 2, 3, 5, 6, 7, 9, 10 completed//
+//FOR THE TEAM: we have 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 (ALL) completed//
 
 UI Components
 1. Introduction menu scene: title of game, team name, start button, credits
@@ -18,13 +18,21 @@ UI Components
 5. Credits of game: document all devs on team & their majors, document 3rd party content you used
 6. Credits must be visually compelling
 
-Particles
+Particles - You can find them on our various levels!
 7. At least 2 different particle effects, each needs to be 2 different particle systems. Choose appropriate shape for spawning them
+	Mystery Land: Spawns from plane
+	Cave Climbing: Uses a cone to spawn particles.
 8. In one particle effect, leverage changing SIZE of particles with one of the modules, particles must change size during the life of the particle, not just a curve of start size.
+	Mystery Land: Secondary "splashes" on the floor produce particles that shrink over their lifespan
+	Cave Climbing: Size, rotation, and color (opacity) change over time. Size changes by speed as well.
 9. In one particle effect, leverage changing SPEED of particles
 10. In one particle effect, leverage a 2D custom material
+	Mystery Land: "Meteor shower" uses custom star texture
+	Cave Climbing: Lava emits a custom smoke texture
 11. In one particle effect, leverage sub-emitters.
+	Mystery Land: "Meteor shower" "splashes" on the floor, producing a burst from a secondary (sub) emitter  
 12. Trigger one particle effect based on events in game.
+	Mystery Land: Player collides with "star" goal platforms and they emit a burst of defaults
 
 iii. RESOURCES
     We made all materials we are using in the game, including all the character models, items, UI components, and audio. We used Adobe Photoshop, Paint Tool SAI, Blender, and Sekaiju.
