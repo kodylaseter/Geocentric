@@ -65,4 +65,4 @@ vi. STARTING SCENE
     Start in Scenes>Alpha>StartMenu.unity
 
 vii. URL
-   <url>
+   http://www.prism.gatech.edu/~ccaldwell9/geocentric_m4.html
