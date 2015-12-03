@@ -15,7 +15,7 @@ public class IntroSlidesTransition : MonoBehaviour {
 		if(Time.time >= count){
 			count += 1;
 		}
-		if(count ==60)
+		if(count ==60 || Input.anyKey)
 			Application.LoadLevel("StartMenu");
 	}
 
