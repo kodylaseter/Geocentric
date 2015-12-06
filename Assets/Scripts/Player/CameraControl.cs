@@ -22,9 +22,11 @@ public class CameraControl : MonoBehaviour {
 		offset = (player.transform.forward * zOffset) + new Vector3 (0, yOffset, 0); ;
 //		offset = new Vector3( xOffset,yOffset, zOffset);
 		playerPosition = player.transform;
+		transform.position = playerPosition.position + offset;
 	}
 	
 	void LateUpdate() {
+
 
 		//Mouse
 		if (Input.GetMouseButton (0)) {
@@ -45,7 +47,22 @@ public class CameraControl : MonoBehaviour {
 			transform.position = ragdoll.position + offset;
 			transform.LookAt(ragdoll);
 		} else {
-			transform.position = playerPosition.position + offset;
+			Vector3 newPlayerPos = playerPosition.position + new Vector3(0, 2.5F, 0);
+			Vector3 temp = newPlayerPos + offset;
+			RaycastHit hit;
+			Vector3 direction = newPlayerPos - temp;
+			Physics.Raycast(temp, direction, out hit);
+			while(hit.collider.tag != "Player") {
+				temp = temp + (direction.normalized * 0.1F);
+				//temp = temp + (direction.normalized *hit.distance);
+				Physics.Raycast(temp, direction, out hit);
+			}
+//			if (hit.collider.tag != "Player") {
+//				temp = temp + (direction * 0.1F);
+//			} 
+			transform.position = temp;
+			//Vector3.Lerp(0
+			//transform.position = playerPosition.position + offset;
 			transform.LookAt(playerPosition.position);
 		}
 
