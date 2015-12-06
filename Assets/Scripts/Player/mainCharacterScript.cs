@@ -14,11 +14,14 @@ public class mainCharacterScript : MonoBehaviour
 	Animator anim;                      // Reference to the animator component.
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
 	CapsuleCollider playerCollider;
+    GroundTagScript groundedDetector;
+    FacePlantDetector faceplantDetector;
 	public bool isFalling;
 	bool isWalking;
-	bool jump = false;
+	//bool jump = false;
 	public bool twirl;
 	public bool ragdoll = false;
+    bool isInput = false;
 
 	// RAGDOLL JUNK // 
 
@@ -30,18 +33,26 @@ public class mainCharacterScript : MonoBehaviour
 		anim = GetComponent <Animator> ();
 		playerRigidbody = GetComponent <Rigidbody> ();
 		playerCollider = GetComponent <CapsuleCollider> ();
+        groundedDetector = GetComponentInChildren<GroundTagScript>();
+        faceplantDetector = GetComponentInChildren<FacePlantDetector>();
 	}
 	
 	
 	void FixedUpdate ()
 	{
+       // print("Begin FixedUpdate");
 		// Store the input axes.
 		float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
+        isFalling = !groundedDetector.GetGrounded();
 
-		AnimatorStateInfo animState = anim.GetCurrentAnimatorStateInfo (0);
+        //print(!isFalling);
+//        print("FACEPLANT:" + faceplantDetector.GetFaceplant());
 
-		/* Collider animation for jumping work begins here. */
+		AnimatorStateInfo animState = anim.GetCurrentAnimatorStateInfo (0); 
+
+#region BLEH
+        /* Collider animation for jumping work begins here. */
 		if (animState.IsName ("Jump")) {
 
 			float jumpTime = (float) animState.normalizedTime - Mathf.Floor(animState.normalizedTime);
@@ -51,48 +62,49 @@ public class mainCharacterScript : MonoBehaviour
 		}
 		/* Collider animation for jumping work ends here. */
 		
-		
+
 		if (Input.GetKeyDown(KeyCode.Backspace))
 		{
 			Ragdoll ();
 		}
-		
+
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
 			anim.SetTrigger ("Twirl");
 			twirl = true;
 		} else {
 			twirl = false;
-		}
-		
-		if ((h != 0f || v != 0f) == !isWalking)
+        }
+#endregion
+        if ((h != 0f || v != 0f) == !isInput)
 		{
-			isWalking = !isWalking;
-		}
-		
-		if (!animState.IsName("Jump") && !isFalling) 
+			isInput = !isInput;
+        }
+
+        if (isFalling && faceplantDetector.GetFaceplant()) //evil faceplant case
+        {
+            anim.SetBool("IsWalking", false);
+           // print("isFalling and isFaceplant = true");
+        } 
+        else if (!animState.IsName("Jump")) //no faceplant or no falling, not in jump animation state
 		{
-			anim.SetBool ("IsWalking", isWalking);
-			
-			if (Input.GetButtonDown ("Jump"))
-			{
-				jump = true;
-				isFalling = true;
-				anim.SetTrigger ("Jump");
-				anim.SetBool ("IsFalling", true);
-				//anim.SetBool ("IsWalking", false);
-			}
-			
-			anim.SetFloat ("RWBlendSpeed", Mathf.Max(Mathf.Abs(h),Mathf.Abs(v)));
-			
-			
+
+            if (Input.GetButtonDown("Jump") && !isFalling) //wants to jump, but is not falling
+            {
+                //jump = true;
+                anim.SetTrigger("Jump"); //JUMP
+            }
+            else
+            {
+                anim.SetBool("IsWalking", isInput); //otherwise walk according to input
+                //print("input: " + isInput);
+            }
+
 		}
-		
-		if (isWalking) Rotate (h, v);
 
+        anim.SetFloat("RWBlendSpeed", Mathf.Max(Mathf.Abs(h), Mathf.Abs(v)));
 
-		// handle physics of attacking
-//		if (twirl & fist.
-		
+		if (isInput) Rotate (h, v); //rotate according to input
+
 	}
 	
 	void Rotate (float h, float v)
@@ -109,7 +121,7 @@ public class mainCharacterScript : MonoBehaviour
 	
 	void OnCollisionEnter (Collision collision)
 	{
-		isFalling = false;
+		//isFalling = false;
 		//commenting this out until we reevaluate jumping
 //		foreach (ContactPoint contact in collision.contacts) {
 //			if (Vector3.Dot(contact.normal, Vector3.up) > 0)

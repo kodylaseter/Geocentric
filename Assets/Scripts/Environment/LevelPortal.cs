@@ -14,7 +14,8 @@ public class LevelPortal : MonoBehaviour {
 	{	
 		//Destroy(col.gameObject);
 		if (col.gameObject.tag.Equals ("Player")) {
-			Application.LoadLevel(level);
+			GameObject.Find ("StateManager").GetComponent<golfStateScript>().LevelComplete();
+//			Application.LoadLevel(level);
             SoundManager.SM.ChangeBGMusic(level);
 		}
 

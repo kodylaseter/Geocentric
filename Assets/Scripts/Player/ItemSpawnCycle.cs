@@ -106,9 +106,9 @@ public class ItemSpawnCycle : MonoBehaviour {
 
 		// Handles Changing Items
 		UpdateItemNums ();
-		print ("PREV" + prevItemNum);
-		print ("CURRENT" + itemNum);
-		print ("NEXT" + nextItemNum);
+		//print ("PREV" + prevItemNum);
+		//print ("CURRENT" + itemNum);
+		//print ("NEXT" + nextItemNum);
 
         if (itemIcons.Length > 1)
         {
@@ -153,11 +153,11 @@ public class ItemSpawnCycle : MonoBehaviour {
 			Sprite temp = Resources.Load(iconDirectory + "/" + item.name, typeof(Sprite)) as Sprite;
 			//SHOULD load only the needed item icons
 			retArray[counter] = temp;
-			print(iconDirectory+"/"+item.name);
-			print (temp.name);
+			//print(iconDirectory+"/"+item.name);
+			//print (temp.name);
 			counter++;
 		}
-		print (retArray.Length);
+		//print (retArray.Length);
 		return retArray;
 	}
 }

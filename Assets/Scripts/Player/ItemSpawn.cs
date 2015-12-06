@@ -34,6 +34,7 @@ public class ItemSpawn : MonoBehaviour {
 				// Call your event function here.
 				if (spawnedItems < maxItems) 
 				{
+					GameObject.Find ("Rex").GetComponent<Animator>().SetTrigger("Throw");
 					Instantiate (item, spawnPoint.position, spawnPoint.rotation);
 					spawnedItems += 1;
 				}
