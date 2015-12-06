@@ -25,6 +25,10 @@ public class GroundTagScript : MonoBehaviour {
         //print(isGrounded);
     }
 
+	void OnTriggerStay(Collider other) {
+		isGrounded = true;       
+	}
+
 	public string GetGroundTag()
 	{
 		return currentGroundTag;
