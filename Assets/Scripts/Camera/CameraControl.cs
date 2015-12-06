@@ -63,7 +63,7 @@ public class CameraControl : MonoBehaviour {
 			transform.position = temp;
 			//Vector3.Lerp(0
 			//transform.position = playerPosition.position + offset;
-			transform.LookAt(playerPosition.position);
+			transform.LookAt(newPlayerPos);
 		}
 
 	}
