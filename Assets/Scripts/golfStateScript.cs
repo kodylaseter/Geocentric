@@ -40,7 +40,7 @@ public class golfStateScript : MonoBehaviour {
 		}
 
 		if (animState.IsName ("LevelComplete")) {
-
+			print (levelCompleteCamera);
 			cam.transform.position = Vector3.Lerp (cam.transform.position, levelCompleteCamera.position, .03f);
 			cam.transform.forward = Vector3.Slerp (cam.transform.forward, levelCompleteCamera.forward, .03f);
 			cam.transform.position = Vector3.Lerp (cam.transform.position, levelCompleteCamera.position, .03f);
