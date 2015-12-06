@@ -47,7 +47,7 @@ public class mainCharacterScript : MonoBehaviour
         isFalling = !groundedDetector.GetGrounded();
 
         //print(!isFalling);
-        print("FACEPLANT:" + faceplantDetector.GetFaceplant());
+//        print("FACEPLANT:" + faceplantDetector.GetFaceplant());
 
 		AnimatorStateInfo animState = anim.GetCurrentAnimatorStateInfo (0); 
 

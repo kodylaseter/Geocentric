@@ -7,6 +7,8 @@ public class ballRespawnButton : MonoBehaviour {
 	public GameObject ballSpawn;
 	public bool pressed;
 
+
+
 	// Use this for initialization
 	void Start () {
 		pressed = false;
@@ -22,6 +24,7 @@ public class ballRespawnButton : MonoBehaviour {
 			ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
 			ball.transform.position = ballSpawn.transform.position;
 			pressed = true;
+
 		}
 
 
