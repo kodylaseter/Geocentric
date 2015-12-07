@@ -30,7 +30,9 @@ public class MenuControl : MonoBehaviour {
 			GameObject.Find ("Camera").GetComponent<mainMenuCameraScript>().destinationSwitch();
 			GameObject.Find ("Selector").GetComponent<selectionScript> ().changeArray();
 		} else {
+            SoundManager.SM.ChangeBGMusic(level);
 			Application.LoadLevel (level);
+
 
 		}
 	}

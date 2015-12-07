@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 // Team Gemometry
-// Ben Seco, Collin Caldwell, Cora Wilson, Kody Laseter, Monet Tomioka
+//Cora Wilson
 
 public class SoundManager : MonoBehaviour{
 

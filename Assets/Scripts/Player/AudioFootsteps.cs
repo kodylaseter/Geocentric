@@ -25,9 +25,10 @@ public class AudioFootsteps : MonoBehaviour {
 		if (currentGroundTag != "Item" && SoundManager.SM.PlaySoundEffects()) {
 			if (SoundManager.SM == null) return;
             //if (SoundManager.SM.GetFootstepSound(currentGroundTag) == null) return; //se probably silent; or error
-			playerAudio.clip = SoundManager.SM.GetFootstepSound (currentGroundTag);
+			//playerAudio.clip = SoundManager.SM.GetFootstepSound (currentGroundTag);
 			//print (playerAudio.clip.name);
-			playerAudio.Play ();
+            //playerAudio.volume = 0.5f;
+            playerAudio.PlayOneShot(SoundManager.SM.GetFootstepSound(currentGroundTag), 0.5f);
 		}
 		
 	}

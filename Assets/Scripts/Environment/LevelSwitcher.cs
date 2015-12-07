@@ -25,6 +25,7 @@ public  class LevelSwitcher : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
+            SoundManager.SM.ChangeBGMusic("GeometryGameBG1");
 			Application.LoadLevel ("StartMenu");
 		}
 //		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
