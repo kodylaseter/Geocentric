@@ -102,8 +102,7 @@ public class mainCharacterScript : MonoBehaviour
 		}
 
         anim.SetFloat("RWBlendSpeed", Mathf.Max(Mathf.Abs(h), Mathf.Abs(v)));
-
-		if (isInput) Rotate (h, v); //rotate according to input
+		if (isInput ) Rotate (h, v); //rotate according to input
 
 	}
 	

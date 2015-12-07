@@ -10,7 +10,7 @@ public class StarSpawn : MonoBehaviour {
 	public GameObject uhoh;
 	public GameObject head;
 
-
+	float time;
 	private double timer;
 	private double spawnTime;
 	private bool clicked;
@@ -19,6 +19,7 @@ public class StarSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawnTime = .001;
+		time = 3;
 
 	}
 	
@@ -32,10 +33,13 @@ public class StarSpawn : MonoBehaviour {
 			if (!clicked) {
 				breaker();
 				clicked = !clicked;
-			} else {
-				Application.LoadLevel ("StartMenu");
 			}
-
+		}
+		if (clicked) {
+			time -= Time.deltaTime;
+		}
+		if (time < 0) {
+			Application.LoadLevel ("StartMenu");
 		}
 	}
 	
@@ -54,6 +58,6 @@ public class StarSpawn : MonoBehaviour {
 	void breaker() {
 		Destroy (head.GetComponent<CharacterJoint> ());
 
-		uhoh.SetActive (true);
+//		uhoh.SetActive (true);
 	}
 }
