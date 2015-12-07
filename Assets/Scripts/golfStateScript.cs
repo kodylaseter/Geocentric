@@ -79,7 +79,7 @@ public class golfStateScript : MonoBehaviour {
 			print ("NEXT");
 			if (Input.anyKey) {
 
-				anim.SetTrigger ("ExitState");
+				anim.SetTrigger ("HoleComplete");
 			}
 			
 		}
