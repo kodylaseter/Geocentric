@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Team Gemometry
+// Collin Caldwell
+
 public class golfStateScript : MonoBehaviour {
 
 	Camera cam;
@@ -30,7 +33,7 @@ public class golfStateScript : MonoBehaviour {
 		string a = "hole1";
 		
 		AnimatorStateInfo animState = anim.GetCurrentAnimatorStateInfo (0);
-		if (animState.IsName ("HoleComplete")) {
+		if (animState.IsName ("HoleComplete") && !door.GetComponent<doorMovedScript>().doorMoved) {
 			cam.transform.position = Vector3.Lerp (cam.transform.position, holeCameraPos.position, .03f);
 			cam.transform.forward = Vector3.Slerp (cam.transform.forward, holeCameraPos.forward, .03f);
 			if ( (Vector3.Distance(cam.transform.position,holeCameraPos.position)) < 1) {
@@ -52,6 +55,7 @@ public class golfStateScript : MonoBehaviour {
 			if (Input.anyKey) {
 				
 				Application.LoadLevel(GameObject.Find ("Portal").GetComponent<LevelPortal>().level);
+				SoundManager.SM.ChangeBGMusic(GameObject.Find ("Portal").GetComponent<LevelPortal>().level);
 			}
 		}
 	}
@@ -69,6 +73,7 @@ public class golfStateScript : MonoBehaviour {
 		holeCameraPos = GameObject.Find (holeName + "Event_CameraPos").transform;
 
 		door = GameObject.Find ("Door" + (int.Parse (hole.Substring (hole.Length-1)) + 1));
+
 		doorPos = GameObject.Find ("Door"+(int.Parse (hole.Substring (hole.Length-1))+1)+"_endingLocation").transform;
 
 	}
@@ -80,6 +85,7 @@ public class golfStateScript : MonoBehaviour {
 			if (Input.anyKey) {
 
 				anim.SetTrigger ("HoleComplete");
+				door.GetComponent<doorMovedScript>().doorMoved = true;
 			}
 			
 		}

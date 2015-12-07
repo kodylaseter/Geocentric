@@ -23,10 +23,13 @@ public class sphereInHole : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-//		door.transform.position = door.transform.position + transform.up * -12;
-		flag.GetComponent<Renderer> ().material.color = Color.green;
-		flagflag.GetComponent<Renderer> ().material.color = Color.green;
-		stateManager.GetComponent<golfStateScript> ().Hole1Trigger (gameObject.name);
+		if (other.tag.Equals ("Item")) {
+			
+			//		door.transform.position = door.transform.position + transform.up * -12;
+			flag.GetComponent<Renderer> ().material.color = Color.green;
+			flagflag.GetComponent<Renderer> ().material.color = Color.green;
+			stateManager.GetComponent<golfStateScript> ().Hole1Trigger (gameObject.name);
+		}
 		
 	}
 
